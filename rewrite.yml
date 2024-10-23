@@ -1,0 +1,36 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: dk.workbench.openrewrite.grails
+recipeList:
+  # Groovy 3 -> 4
+  - org.openrewrite.java.ChangePackage:
+     oldPackageName: groovy.util.slurpersupport
+     newPackageName: groovy.xml.slurpersupport
+  # Grails 6 -> 7
+  - org.openrewrite.gradle.AddProperty:
+     key: grailsVersion
+     value: 7.0.0-SNAPSHOT
+     overwrite: true
+     filePattern: '**/*.properties'
+  - org.openrewrite.gradle.AddProperty:
+      key: grailsGradlePluginVersion
+      value: 7.0.0-SNAPSHOT
+      overwrite: true
+      filePattern: '**/*.properties'
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: org.grails.grails-*
+      newVersion: 7.0.0-SNAPSHOT
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: com.bertramlabs.asset-pipeline
+      newVersion: 5.0.1
+  - org.openrewrite.gradle.RemoveDependency:
+      groupId: io.micronaut
+      artifactId: micronaut-inject-groovy
+      # configuration: compileOnly
+  - org.openrewrite.gradle.RemoveDependency:
+      groupId: io.micronaut
+      artifactId: micronaut-http-client
+      # configuration: testImplementation
+  - org.openrewrite.gradle.UpgradeDependencyVersion:
+      groupId: com.bertramlabs.plugins
+      artifactId: asset-pipeline-grails
+      newVersion: 5.0.1
