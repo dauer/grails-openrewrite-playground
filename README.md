@@ -13,7 +13,7 @@ To do a test run (generate patch file containing the changes in `build/reports/r
 To do the actual upgrade
 
 ```
-./gradlew rewriteDryRun
+./gradlew rewriteRun
 ```
 
 ## Todo
