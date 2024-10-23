@@ -16,6 +16,8 @@ group = "grails.openrewrite.playground"
 repositories {
     mavenCentral()
     maven { url "https://repo.grails.org/grails/core/" }
+    // Needed since we are using -SNAPSHOT release ...
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 configurations {
