@@ -1,22 +1,16 @@
-# grails-openrewrite-playground
+# Grails OpenRewrite Playground
 
-Testing [OpenRewrite](https://docs.openrewrite.org/) for upgrading [Grails](https://grails.org/) projects.
+Testing [OpenRewrite](https://docs.openrewrite.org/) recipes for upgrading [Grails](https://grails.org/) projects
 
-This project contains a simple Grails 6 application and some OpenRewrite recipes for upgrading to Grails 7.
+## Grails 6
 
-To do a test run (generate patch file containing the changes in `build/reports/rewrite/rewrite.patch`)
+The [grails6](./grails6) folder contains a Grails 6 project and OpenRewrite recipes for upgrading to the upcoming Grails 7
 
-```
-./gradlew rewriteDryRun
-```
+## Grails 5, 4, 3
 
-To do the actual upgrade
+Work in progress - I am working on OpenRewrite upgrade scripts, stay tuned...
 
-```
-./gradlew rewriteRun
-```
+## Grails 2
 
-## Todo
-
-*A lot* - This is very much work in progress...
-
+Take a look at [Sørens](https://github.com/sbglasius) GitHub projects and his
+[initialGrails2Converter](https://github.com/sbglasius/initialGrails2Converter) project
