@@ -14,6 +14,9 @@ The [grails3](./grails3) folder contains a Grails 3 project and OpenRewrite reci
 
 ## Grails 2
 
+Grails 2 is [old](https://endoflife.date/grails) and  uses [Gant](https://github.com/Gant/Gant) for dependency management and building, writing an OpenRewrite recipe
+for upgrading is probably not that easy...
+
 Take a look at [Sørens](https://github.com/sbglasius) GitHub projects and his
 [initialGrails2Converter](https://github.com/sbglasius/initialGrails2Converter) project
 
