@@ -7,14 +7,14 @@ application and [OpenRewrite](https://docs.openrewrite.org/) recipes for upgradi
 
 ## Description
 
-OpenRewrite requires [Gradle](https://gradle.org/) 4.x - Grails 3 uses Grails 3.5
+OpenRewrite requires [Gradle](https://gradle.org/) 4.x - Grails 3 uses Gradle 3.5
 
 Install Gradle using [SDKMan](https://sdkman.io/)
 
     sdk install gradle 4.10.3
     sdk use gradle 4.10.3
 
-To do a test run (generate patch file containing the changes in `build/reports/rewrite/rewrite.patch`)
+To do a test run (generate a patch file containing the changes in `build/reports/rewrite/rewrite.patch`)
 
     gradle rewriteDryRun
 
