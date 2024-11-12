@@ -10,7 +10,7 @@ The [grails6](./grails6) folder contains a Grails 6 project and OpenRewrite reci
 
 ## Grails 5, 4, 3
 
-The [grails3](./grails3) folder contains a Grails 3 project and OpenRewrite recipes for upgrading to the upcoming Grails 6
+The [grails3](./grails3) folder contains a Grails 3 project and OpenRewrite recipes for upgrading to Grails 6
 
 ## Grails 2
 
