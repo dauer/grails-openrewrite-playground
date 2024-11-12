@@ -1,0 +1,38 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: dk.workbench.openrewrite.grails
+recipeList:
+  - org.openrewrite.gradle.AddProperty:
+     key: grailsVersion
+     value: 6.2.0
+     overwrite: true
+     filePattern: '**/*.properties'
+  - org.openrewrite.gradle.AddProperty:
+      key: grailsGradlePluginVersion
+      value: 6.1.2
+      overwrite: true
+      filePattern: '**/*.properties'
+  # Grails wrapper is replaced by Gradlew
+  - org.openrewrite.properties.DeleteProperty:
+      propertyKey: grailsWrapperVersion
+  # Gorm version is defined in the Grails BOM file
+  - org.openrewrite.properties.DeleteProperty:
+      propertyKey: gormVersion
+  # Gradle wrapper is no longer defined
+  - org.openrewrite.properties.DeleteProperty:
+      propertyKey: gradleWrapperVersion
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: org.grails.grails-*
+      newVersion: 6.2.0
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: com.bertramlabs.asset-pipeline
+      newVersion: 4.3.0
+  - org.openrewrite.gradle.UpgradeDependencyVersion:
+      groupId: com.bertramlabs.plugins
+      artifactId: asset-pipeline-grails
+      newVersion: 4.3.0
+  # For web or rest applications this should not be a problem - plugins might run into api vs implementation issues...
+  - org.openrewrite.gradle.ChangeDependencyConfiguration:
+      groupId: '*'
+      artifactId: '*'
+      newConfiguration: implementation
+      configuration: compile

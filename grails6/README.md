@@ -1,5 +1,7 @@
 # Grails 6
 
+**DISCLAIMER** This project is still very much Work in Progress...
+
 This folder contains a simple Grails 6 application and OpenRewrite recipes for upgrading to Grails 7.
 
 To do a test run (generate patch file containing the changes in `build/reports/rewrite/rewrite.patch`)
